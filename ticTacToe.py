@@ -49,3 +49,29 @@ class TicTacToe():
                 if self.board[i][j] == "-":
                     return False
         return True
+    
+    def get_input(self, rowcol):
+        x = input(f"{rowcol}: ")
+        if x.isnumeric() and int(x) == float(x) and 1 <= int(x) <= 3:
+            return int(x) - 1
+        else:
+            print(f"\n{rowcol} must be an integer between 1 and 3\n")
+            return self.get_input(rowcol)
+
+
+    def play(self):
+        print("\nTic-Tac-Toe\n")
+        while not self.gameOver:
+            print(f"Turn: {self.current}\n")
+            row = self.get_input("Row")
+            col = self.get_input("Column")
+            print(f"\n{self.make_move(row, col)}")
+        reset = input("\nReset (Y/N): ")
+        if reset.upper() == "Y" :
+            self.reset()
+
+    def reset(self):
+        self.board = [["-", "-", "-"], ["-", "-", "-"],["-", "-", "-"]]
+        self.current = "O"
+        self.gameOver = False
+        self.play()

@@ -46,7 +46,7 @@ class TicTacToe():
         else:
             return "Space Taken\n"
         
-    def is_draw(self): #Checks for draw
+    def is_draw(self): #Checks board for draw
         for i in range(len(self.board)):
             for j in range(len(self.board[i])):
                 if self.board[i][j] == "-":

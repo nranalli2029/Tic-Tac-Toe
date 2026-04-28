@@ -12,7 +12,7 @@ class TicTacToe():
             output.append(" ".join(self.board[i]))
         return "\n".join(output) + "\n"
     
-    def check_winner(self): #Checks for win in rows, columns, and diagonals
+    def check_winner(self): #Checks for a win in rows, columns, and diagonals
         for i in range(3):
             if self.board[i][0] == self.board[i][1] == self.board[i][2] == self.current:
                 return True
@@ -24,7 +24,7 @@ class TicTacToe():
             return True
         return False
 
-    def make_move(self, x, y): #Makes move if space is open and checks state of game
+    def make_move(self, x, y): #Makes move if space is open and checks the state of the game
         if self.board[x][y] == "-":
             self.board[x][y] = self.current
             board = self.print_board()

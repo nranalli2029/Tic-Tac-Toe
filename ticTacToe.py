@@ -6,7 +6,7 @@ class TicTacToe():
         self.scores = {"O": 0, "X": 0}
         self.play()
 
-    def print_board(self): #returns the board as a string
+    def print_board(self): #returns the board as a string 
         output = []
         for i in range(len(self.board)):
             output.append(" ".join(self.board[i]))
